@@ -5,7 +5,7 @@ import Loading from './Loading'
 
 const Post = ( {restBase} ) => {
     const { slug } = useParams();
-    const restPath = restBase + ``
+    const restPath = restBase + `posts/?slug=${slug}&_embed`
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 

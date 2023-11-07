@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import Loading from './Loading'
+import Loading from '../src/components/Loading'
 
 const Home = ( {restBase} ) => {
-    const restPath = restBase + ''
-    const [restData, setData] = useState([])
+    const restPath = restBase + 'pages/15'
+    const [restData, setData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
 
     useEffect(() => {
@@ -19,14 +19,20 @@ const Home = ( {restBase} ) => {
         }
         fetchData()
     }, [restPath])
+
+    console.log('restData:', restData);
+
     
     return (
         <>
         { isLoaded ?
-            <article id={`post-${restData.id}`}>
-                <h1>{restData.title.rendered}</h1>
+            <article className='relative z-5' id={`post-${restData.id}`}>
+               <h1 className='flex justify-center'>{restData.title.rendered}</h1>
                 <div className="entry-content">
-                    
+                <section>
+                    <h2 className="flex justify-start"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}></h2>
+                    <p className="flex justify-center "dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></p>
+                </section>
                 </div>
             </article>
         : 

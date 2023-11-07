@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
+import Home from '../pages/Home'
 import Posts from './components/Posts'
 import Post from './components/Post'
-import Services from './components/Services'
+import NavBar from './components/NavBar'
+import Background from './components/Background'
 
 function App() {
   
@@ -27,33 +26,30 @@ function App() {
     return {__html: img}
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+  };
+
+  const scrollToSection = (sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+      }
+  };
+
   return (
     <Router basename="/">
       <header id="masthead" className="site-header">
-        <div className="site-branding">
-          <p className="site-title">Headless WordPress App</p>
-        </div>
-        <nav className="site-navigation">
-          <ul>
-            <li><NavLink to='/' end>Home</NavLink></li>
-            <li><NavLink to='/about'>About</NavLink></li>
-            <li><NavLink to='/blog'>Blog</NavLink></li>
-            <li><NavLink to='/services'>Services</NavLink></li>
-          </ul>
-        </nav>
+       <NavBar/>
       </header>
       <main id="main">
         <Routes>
           <Route path='/' element={<Home restBase={restBase} />} />
-          <Route path='/about' element={<About restBase={restBase} />} />
           <Route path='/blog' element={<Posts restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/blog/:slug' element={<Post restBase={restBase} />} />
-          <Route path='/services' element={<Services restBase={restBase} />} />
         </Routes>
+      <Background className="absolute z-1"/>
       </main>
-      <footer>
-        <p className="copyright">Created by <a href="https://wp.bcitwebdeveloper.ca/" target="_blank" rel="noopener noreferrer">Joaquin Opulencia</a>.</p>
-      </footer>
     </Router>
   )
 }
