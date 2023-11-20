@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	margin: 0;
+	margin: 8px;
 }
 
 article,
@@ -100,9 +100,6 @@ sub {
 	bottom: -0.25em;
 }
 
-img {
-	border: 0;
-}
 
 svg:not(:root) {
 	overflow: hidden;
@@ -216,5 +213,33 @@ th {
 	padding: 0;
 }
 
-/* Background Image */
+/* Typography */
 
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../public/fonts/DMSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'DM Sans';
+}
+
+/* Custom Cursor */
+.cursor {
+	background-color:#111;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+* {
+	cursor: none;
+}

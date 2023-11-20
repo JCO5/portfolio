@@ -28,11 +28,9 @@ const Posts = ( {restBase, featuredImage} ) => {
                 <h1>Blog</h1>
                 {restData.map(post => 
                     <article key={post.id} id={`post-${post.id}`}>
-                        {post.featured_media !== 0 && post._embedded &&
-                            <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
-                        }
-                        <Link to={`/blog/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
-                        <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>
+                      
+                        <Link to={`/projects/${post.slug}`}><h2>{post.acf.title}</h2></Link>
+                        <img src={post.acf.project_thumbnail}></img>
                     </article>
                 )}
             </>

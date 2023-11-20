@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import Home from '../pages/Home'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
 import Posts from './components/Posts'
 import Post from './components/Post'
 import NavBar from './components/NavBar'
@@ -26,29 +27,12 @@ function App() {
     return {__html: img}
   }
 
-  const scrollToTop = () => {
-    window.scrollTo({top: 0, behavior: "smooth"});
-  };
-
-  const scrollToSection = (sectionId) => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-      }
-  };
-
   return (
     <Router basename="/">
       <header id="masthead" className="site-header">
-       <NavBar/>
       </header>
       <main id="main">
-        <Routes>
-          <Route path='/' element={<Home restBase={restBase} />} />
-          <Route path='/blog' element={<Posts restBase={restBase} featuredImage={featuredImage} />} />
-          <Route path='/blog/:slug' element={<Post restBase={restBase} />} />
-        </Routes>
-      <Background className="absolute z-1"/>
+      <Home/>
       </main>
     </Router>
   )

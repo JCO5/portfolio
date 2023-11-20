@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import subway from '../assets/subway.jpeg';
-import trike from '../assets/trike.jpg'; 
-import gig from '../assets/gig.jpeg'; 
-import roadtrip from '../assets/roadtrip.jpeg'; 
+import subway from '../assets/subway-optimized.jpg';
+import trike from '../assets/trike-optimized.jpg'; 
+import gig from '../assets/gig-optimized.jpg'; 
+import roadtrip from '../assets/roadtrip-optimized.jpg'; 
 
 function Background() {
   const [randImage, setRandImage] = useState(null);
@@ -20,12 +20,11 @@ function Background() {
     backgroundPosition: 'center',
     height: '100vh',
     width: '100vw',
-    filter: 'blur(3px)', // Adjust the blur amount as needed
     zIndex: -1,
   };
 
   return (
-    <div className="absolute z-1 top-0" style={backgroundStyle}>
+    <div className="absolute z-1 top" style={backgroundStyle}>
     </div>
   );
 }

@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore Prettier configuration file
+.prettierrc
+.prettierignore
+
+# Ignore Prettier cache and artifacts
+.prettierignore
+.prettier_cache/

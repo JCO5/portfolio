@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import Loading from '../src/components/Loading'
+import Loading from '../components/Loading'
+import SoundCloudPlayer from '../components/SoundcloudPlayer'
 
-const Projects = ( {restBase} ) => {
-    const restPath = restBase + 'pages/34'
+const About = ( {restBase} ) => {
+    const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/32?_embed&acf_format=standard'
     const [restData, setData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -30,8 +31,10 @@ const Projects = ( {restBase} ) => {
                <h1>{restData.title.rendered}</h1>
                 <div className="entry-content">
                 <section>
-                    <h2 className="text"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}></h2>
-                    <p dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></p>
+                    <article>
+                        
+                        <SoundCloudPlayer/>
+                    </article>
                 </section>
                 </div>
             </article>
@@ -42,4 +45,4 @@ const Projects = ( {restBase} ) => {
     )
 }
 
-export default Projects
+export default About
