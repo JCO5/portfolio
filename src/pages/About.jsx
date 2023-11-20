@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
 import SoundCloudPlayer from '../components/SoundcloudPlayer'
 
-const About = ( {restBase} ) => {
+const About = () => {
     const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/32?_embed&acf_format=standard'
     const [restData, setData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
@@ -32,7 +32,7 @@ const About = ( {restBase} ) => {
                 <div className="entry-content">
                 <section>
                     <article>
-                        
+
                         <SoundCloudPlayer/>
                     </article>
                 </section>

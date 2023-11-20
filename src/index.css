@@ -243,3 +243,11 @@ h4 {
 * {
 	cursor: none;
 }
+
+/* Site Padding */
+@media (min-width: 768px) {
+	html {
+	  padding-left: 10rem;
+	  padding-right: 10rem;
+	}
+  }

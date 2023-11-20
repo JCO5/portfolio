@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { useRef } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -35,7 +34,7 @@ const Projects = () => {
     return (
         <>
         { isLoaded ?
-           <article className='m-4'>
+           <article className=''>
             <h1>{restDataPage.title.rendered}</h1>
             {restDataPosts.map(post => 
                     <article key={post.id} id={`post-${post.id}`}>

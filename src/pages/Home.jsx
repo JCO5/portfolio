@@ -8,7 +8,7 @@ import About from './About'
 import NavBar from '../components/NavBar'; 
 import CustomCursor from '../components/CustomCursor';
 
-const Home = ( {restBase} ) => {
+const Home = () => {
     const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/15?_embed&acf_format=standard'
     const [restData, setData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
@@ -56,7 +56,6 @@ const Home = ( {restBase} ) => {
                                 className="w-48 rounded-full mt-20 border-solid border-4 border-black"
                                 src={restData.acf.portrait}
                                 alt="Portrait"
-                    
                             />
                             </div>
                             <h1 className="title flex justify-start text-1xl font-bold md:text-green-600 transition-all transform hover:translate-x-4 hover:text-orange-500 px-4" dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}></h1>

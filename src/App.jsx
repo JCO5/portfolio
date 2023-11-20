@@ -34,6 +34,7 @@ function App() {
       <main id="main">
       <Home/>
       </main>
+      
     </Router>
   )
 }
