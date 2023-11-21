@@ -34,30 +34,37 @@ const Projects = () => {
     return (
         <>
         { isLoaded ?
-           <article className=''>
-            <h1>{restDataPage.title.rendered}</h1>
-            {restDataPosts.map(post => 
-                    <article key={post.id} id={`post-${post.id}`}>
-                        <h2>{post.acf.title}</h2>
-                        <Tabs>
-                <TabList>
-                    <Tab>Design</Tab>
-                    <Tab>Development</Tab>
+        <section>
+             <h1>{restDataPage.title.rendered}</h1>
+            <article className='grid grid-cols-1 gap-4'>
+            {restDataPosts.map(post => (
+              <div key={post.id} className='border p-4 rounded-lg shadow-md mb-4'>
+                <h2 className='text-xl font-semibold mb-2'>{post.acf.title}</h2>
+          
+                <Tabs>
+                  <TabList className='mb-4'>
+                    <Tab className='mr-4'>Design</Tab>
+                    <Tab className='mr-4'>Development</Tab>
                     <Tab>Insights</Tab>
-                </TabList>
-                <TabPanel>
-                <img src={post.acf.project_thumbnail.url}></img>
-                </TabPanel>
-                <TabPanel>
+                  </TabList>
+          
+                  <TabPanel>
+                    <img src={post.acf.project_thumbnail.url} alt={post.acf.title} className='w-full h-auto' />
+                  </TabPanel>
+          
+                  <TabPanel>
                     <h2>Content for Tab 2</h2>
-                </TabPanel>
-                <TabPanel>
+                  </TabPanel>
+          
+                  <TabPanel>
                     <h2>Content for Tab 3</h2>
-                </TabPanel>
+                  </TabPanel>
                 </Tabs>
-                    </article>
-                )}
-           </article>
+              </div>
+            ))}
+          </article>
+          
+        </section>
         : 
             <Loading /> 
         }

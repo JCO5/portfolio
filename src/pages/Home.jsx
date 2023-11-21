@@ -7,6 +7,7 @@ import Projects from './Projects'
 import About from './About'
 import NavBar from '../components/NavBar'; 
 import CustomCursor from '../components/CustomCursor';
+import NowPlaying from '../components/NowPlaying';
 
 const Home = () => {
     const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/15?_embed&acf_format=standard'
@@ -45,7 +46,7 @@ const Home = () => {
         <>
         { isLoaded ?
             <div>
-            <section>
+            <section className='h-screen'>
               {/* Home Section */}
               <Element name="home" className="element home">
                 <article className="relative z-5" id={`post-${restData.id}`}>
@@ -58,9 +59,10 @@ const Home = () => {
                                 alt="Portrait"
                             />
                             </div>
-                            <h1 className="title flex justify-start text-1xl font-bold md:text-green-600 transition-all transform hover:translate-x-4 hover:text-orange-500 px-4" dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}></h1>
+                            <h1 className="title flex justify-start text-1xl font-bold md:text-green-600 transition-all transform hover:translate-x-4 hover:text-orange-500" dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}></h1>
+                            <NowPlaying/>
                             <CustomCursor/>
-                            <p className="flex justify-center text-2xl px-4"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></p>
+                            <p className="flex justify-center text-1xl"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></p>
                         </section>
                 </div>
                 </article>

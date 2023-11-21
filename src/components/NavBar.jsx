@@ -1,15 +1,18 @@
 
 import { Link } from 'react-scroll';
-
 import React, { useState } from "react";
+// Import React Icons
+import { GoHome } from "react-icons/go";
+import { GoPerson } from "react-icons/go";
+import { RiBox3Line } from "react-icons/ri";
 
 function NavBar({activeSection}) {
   const [open, setOpen] = useState(false);
 
     return (
-    <header className='fixed bottom-0 left-0 w-full z-50 bg-black border-gray-300 p-2 md:bg-transparent'>
-       <nav className="site-navigation flex justify-center space-x-4 md:fixed md:right-10 md:top-10 ">
-          <ul className='flex justify-between gap-1 md:flex-col'>
+    <header className='fixed bottom-0 left-0 w-full z-50 bg-black border-gray-300 p-2 md:bg-none'>
+       <nav className="site-navigation space-x-4 md:fixed md:right-10 md:top-10 ">
+          <ul className='flex justify-evenly gap-1 md:flex-col md:justify-evenly'>
           <Link
             to="home"
             className={activeSection === 'home' ? 'active text-white md:text-black' : ''}
@@ -17,7 +20,7 @@ function NavBar({activeSection}) {
             smooth={true}
             duration={500}
           >
-            Home
+          <GoHome size={40} />
           </Link>
           <Link
             to="projects"
@@ -26,7 +29,7 @@ function NavBar({activeSection}) {
             smooth={true}
             duration={500}
           >
-            Projects
+          <RiBox3Line size={40} />
           </Link>
           <Link
             to="about"
@@ -35,7 +38,7 @@ function NavBar({activeSection}) {
             smooth={true}
             duration={500}
           >
-            About
+          <GoPerson size={40} />
           </Link>
           </ul>
         </nav>

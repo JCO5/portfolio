@@ -72,7 +72,7 @@ dfn {
 
 h1 {
 	font-size: 2em;
-	margin: 0.67em 0;
+	margin: 0;
 }
 
 mark {
@@ -214,7 +214,6 @@ th {
 }
 
 /* Typography */
-
 @font-face {
     font-family: 'DM Sans';
     src: url('../public/fonts/DMSans.ttf') format('truetype');
@@ -231,7 +230,11 @@ h4 {
 
 /* Custom Cursor */
 .cursor {
-	background-color:#111;
+	background-color:#ffffff;
+	box-shadow:
+    0 0 15px 7.5px #fff,  /* inner white */
+    0 0 25px 15px #f0f, /* middle magenta */
+    0 0 35px 10px #0ff; /* outer cyan */
 	height: 32px;
 	width: 32px;
 	border-radius: 50%;
@@ -240,6 +243,7 @@ h4 {
 	left: 0;
 }
 
+/* Cursor Stylings */
 * {
 	cursor: none;
 }
@@ -251,3 +255,103 @@ h4 {
 	  padding-right: 10rem;
 	}
   }
+
+/* Site Colors */
+html {
+	background-color: #000;
+	color: white;
+}
+
+.nowPlayingCard {
+    flex-shrink: 0;
+    border-radius: 22px;
+    border: 2px solid #ffffff;
+    box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.3);
+    align-items: center;
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+
+.nowPlayingCard:hover {
+    box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.3);
+    transform: translateX(-10px) translateY(-10px);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+  
+.nowPlayingCard a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.nowPlayingCard a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.nowPlayingImage img {
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 3px 3px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    margin: 10px;
+}
+
+.nowPlayingImage img:hover {
+    box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.3);
+    transform: translateX(-3px) translateY(-3px);
+    transition: all 0.5s ease;
+}
+
+#nowPlayingDetails {
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 54%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 54%;
+    height: 100%;
+}
+
+.nowPlayingTitle, .playlistName {
+    flex-shrink: 0;
+    color: #ffffff;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 20px;
+    width: 100%;
+}
+
+.nowPlayingArtist, .playlistHeader {
+    text-align: left;
+    flex-shrink: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+	color: white;
+}
+
+.nowPlayingTime {
+    text-align: left;
+	color: white;
+}
+
+.nowPlayingState {
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+}
+
+.nowPlayingState img{
+    filter: invert(100%);
+    width: 100%;
+}
