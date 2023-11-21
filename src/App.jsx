@@ -5,7 +5,7 @@ import Projects from './pages/Projects'
 import Posts from './components/Posts'
 import Post from './components/Post'
 import NavBar from './components/NavBar'
-import Background from './components/Background'
+
 
 function App() {
   
@@ -29,12 +29,9 @@ function App() {
 
   return (
     <Router basename="/">
-      <header id="masthead" className="site-header">
-      </header>
       <main id="main">
       <Home/>
       </main>
-      
     </Router>
   )
 }

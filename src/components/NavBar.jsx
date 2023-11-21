@@ -1,16 +1,13 @@
 
 import { Link } from 'react-scroll';
-import React, { useState } from "react";
 // Import React Icons
 import { GoHome } from "react-icons/go";
 import { GoPerson } from "react-icons/go";
 import { RiBox3Line } from "react-icons/ri";
 
 function NavBar({activeSection}) {
-  const [open, setOpen] = useState(false);
-
     return (
-    <header className='fixed bottom-0 left-0 w-full z-50 bg-black border-gray-300 p-2 md:bg-none'>
+    <header className='fixed bottom-0 left-0 w-full z-50 bg-black border-gray-300 p-2 '>
        <nav className="site-navigation space-x-4 md:fixed md:right-10 md:top-10 ">
           <ul className='flex justify-evenly gap-1 md:flex-col md:justify-evenly'>
           <Link

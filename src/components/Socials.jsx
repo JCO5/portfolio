@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Socials() {
-  const [open, setOpen] = useState(false);
-
     return (
-       <nav className="site-navigation flex col justify-center space-x-4">
-          <ul className='flex justify-between gap-1 md:flex-col'>
-          <Link className="text-white md:text-black" to='/' onClick={() => scrollToSection('projects-section')}><FaGithub /></Link>
-          <Link className="text-white md:text-black" to='/' onClick={() => scrollToSection('about-section')}>About</Link>
-          <Link className="text-white md:text-black" to='/' onClick={() => scrollToSection('connect-section')}>Connect</Link>
-          </ul>
-        </nav>
+      <nav className="site-navigation flex flex-col justify-center gap-1">
+      <ul className='flex justify-center items-center gap-1 flex-col md:flex-row md:justify-evenly'>
+    <Link to='https://github.com/JCO5' ><FaGithub style={{color: "white"}} size={40}/></Link>
+    <Link to='https://www.linkedin.com/in/joaquin-opulencia-09139b236/' ><FaLinkedin style={{color: "white"}} size={40}/></Link>
+    <Link to='https://twitter.com/home' ><FaXTwitter style={{color: "white"}} size={40}/></Link>
+</ul>
+
+  </nav>
   )
 }
 

@@ -70,11 +70,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0;
-}
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -255,6 +250,11 @@ h4 {
 	  padding-right: 10rem;
 	}
   }
+
+/* h-screen */
+.h-screen-minus-40 {
+    height: calc(100vh - 40px);
+}
 
 /* Site Colors */
 html {
