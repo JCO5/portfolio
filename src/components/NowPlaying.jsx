@@ -106,7 +106,7 @@ const NowPlaying = () => {
   //Setting default values for the listener's current state and the duration of the song played
   let playerState = ''
   let secondsPlayed = 0, minutesPlayed = 0, secondsTotal = 0, minutesTotal = 0;
-  let albumImageUrl = './images/albumCover.png'
+  let albumImageUrl = 'src/assets/albumCover.svg'
   let title = ''
   let artist = ''
 
@@ -130,8 +130,8 @@ const NowPlaying = () => {
     artist = nowPlaying.artist
   } else if (nowPlaying === 'Currently Not Playing') { //If the response returns this error message then we print the following text in the widget
     playerState = 'OFFLINE' 
-    title = 'User is'
-    artist = 'currently Offline'
+    title = 'Not listening'
+    artist = 'to tunes right now'
   } else { //If the response wasn't able to fetch anything then we display this
     title = 'Failed to'
     artist = 'fetch song'

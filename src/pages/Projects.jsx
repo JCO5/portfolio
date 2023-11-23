@@ -39,12 +39,13 @@ const Projects = () => {
         { isLoaded ?
         <section>
             <h1 className='flex justify-center py-8 text-[2rem]' >{restDataPage.title.rendered}</h1>
-            <article className='grid grid-cols-1 gap-4'>
+            <article className='grid grid-cols-1 gap-4 px-7 md:px-0'>
             {restDataPosts.map(post => (
               <div 
                 key={post.id} 
                 className='border p-4 rounded-lg shadow-md '>
                 <h2 className='text-xl font-semibold mb-2'>{post.acf.title}</h2>
+                
                 <Tabs>
                   <TabList >
                     <Tab>Design</Tab>

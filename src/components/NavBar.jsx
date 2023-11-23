@@ -1,13 +1,27 @@
-
-import { Link } from 'react-scroll';
+import { useState, useEffect } from 'react'
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 // Import React Icons
 import { GoHome } from "react-icons/go";
 import { GoPerson } from "react-icons/go";
 import { RiBox3Line } from "react-icons/ri";
 
-function NavBar({activeSection}) {
+function NavBar() {
+     // For Section Clicking on Nav
+     const [activeSection, setActiveSection] = useState('');
+
+     useEffect(() => {
+         scrollSpy.update();
+         Events.scrollEvent.register('begin', (to, element) => {
+           setActiveSection(element.id);
+         });
+     
+         return () => {
+           Events.scrollEvent.remove('begin');
+         };
+       }, []);
+     
     return (
-    <header className='fixed bottom-0 left-0 w-full z-50 bg-black border-gray-300 p-2 '>
+    <header className='fixed bottom-0 left-0 w-full z-50 bg-black border-gray-300 p-2 md:transparent'>
        <nav className="site-navigation space-x-4 md:fixed md:right-10 md:top-10 ">
           <ul className='flex justify-evenly gap-1 md:flex-col md:justify-evenly'>
           <Link

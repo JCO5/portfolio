@@ -1,10 +1,7 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Home from './pages/Home'
-import Projects from './pages/Projects'
-import Posts from './components/Posts'
-import Post from './components/Post'
-import NavBar from './components/NavBar'
+
 
 
 function App() {

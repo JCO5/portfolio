@@ -29,25 +29,25 @@ const About = () => {
         { isLoaded ?
             <article className="pb-16 md:pb-0"id={`post-${restData.id}`}>
                <h1 className='flex justify-center py-8 text-[2rem]' >{restData.title.rendered}</h1>
-                <div className="entry-content">
+                <div className="entry-content px-7">
                 <section>
                     <article>
                         {/* I love making things */}
-                        <p>{restData.acf.title}</p>
+                        <p className='flex justify-center pb-2 '>{restData.acf.title}</p>
                         <SoundCloudPlayer/>
                         {/* Music Prod. */}
                         <p>{restData.acf.hobby_1_title}</p>
-                        <span></span>
+                        <hr className="bg-white h-1"></hr>
                     </article>
                     <article>
                         {/* Film and Digital Photog. */}
                         <p>{restData.acf.hobby_2_title}</p>
-                        <span></span>
+                        <hr className="bg-white h-1"></hr>
                     </article>
                     <article>
                         {/* Mixes and Remixes */}
                         <p>{restData.acf.hobby_3_title}</p>
-                        <span></span>
+                        <hr className="bg-white h-1"></hr>
                     </article>
                 </section>
                 </div>
