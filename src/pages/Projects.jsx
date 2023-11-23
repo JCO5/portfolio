@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import {Link} from 'react-router-dom'
 
 const Projects = () => {
     const restPathPage =  'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/34'
@@ -39,22 +38,25 @@ const Projects = () => {
         { isLoaded ?
         <section>
             <h1 className='flex justify-center py-8 text-[2rem]' >{restDataPage.title.rendered}</h1>
-            <article className='grid grid-cols-1 gap-4 px-7 md:px-0'>
+            <article className='grid grid-cols-1 gap-4 px-7 md:px-0 lg:px-10 '>
             {restDataPosts.map(post => (
               <div 
                 key={post.id} 
-                className='border p-4 rounded-lg shadow-md '>
-                <h2 className='text-xl font-semibold mb-2'>{post.acf.title}</h2>
-                
+                className='border p-4 rounded-lg shadow-md bg-white text-black'>
+                <h2 className='text-xl font-semibold mb-2 text-center'>{post.acf.title}</h2>
+                <nav className='flex flex-row justify-evenly gap-1'>
+                  <a className='underline ' href={post.acf.live_site}>{post.acf.live_site_text}</a>
+                  <a className='underline ' href={post.acf.github}>{post.acf.github_text}</a>
+                </nav>
+                <img src={post.acf.project_thumbnail.url} alt={post.acf.title} className='w-full h-auto'/>
                 <Tabs>
                   <TabList >
-                    <Tab>Design</Tab>
-                    <Tab>Development</Tab>
-                    <Tab>Insights</Tab>
+                    <Tab>{post.acf.design_text}</Tab>
+                    <Tab>{post.acf.development_text}</Tab>
+                    <Tab>{post.acf.insights_text}</Tab>
                   </TabList>
                   {/* Design */}
                   <TabPanel>
-                    <img src={post.acf.project_thumbnail.url} alt={post.acf.title} className='w-full h-auto' />
                     <p>{post.acf.design_description}</p>
                   </TabPanel>
                    {/* Development */}

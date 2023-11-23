@@ -79,7 +79,6 @@ export const getNowPlaying = async () => {
       artistUrl
     };
   } catch (error) {
-    console.error('Error fetching currently playing song: ', error);
     return error.message.toString();
   }
 };

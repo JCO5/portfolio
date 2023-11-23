@@ -62,10 +62,6 @@ const Home = () => {
                                     <div className='md:hidden'>
                                         <Socials/>
                                     </div>
-                                    {/* NowPlaying in the Second Column for screens 768px and above */}
-                                    <div className='hidden md:block'>
-                                        <NowPlaying/>
-                                    </div>
                                     <DownButton/>
                             </div>
                 </div>
