@@ -211,7 +211,7 @@ th {
 /* Typography */
 @font-face {
     font-family: 'DM Sans';
-    src: url('../public/fonts/DMSans.woff') format('woff');
+    src: url('../fonts/DMSans.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }

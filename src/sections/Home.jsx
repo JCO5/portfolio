@@ -39,32 +39,40 @@ const Home = () => {
               <Element name="home" className="element home">
                 <article className="relative z-5" id={`post-${restData.id}`}>
                 <div className="entry-content">
-                            <div className='flex justify-center'>
-                                <img
-                                    className="w-48 rounded-full mt-20 border-solid border-4 border-white"
-                                    src={restData.acf.portrait}
-                                    alt="Portrait"
-                                />
-                            </div>
-                            <div>
-                                {/* Greetings */}
-                                <h1 className="title text-center text-[2rem] pt-8 font-bold md:text-[#36A949] transition-all transform hover:translate-x-4 hover:text-[#F05A28] md:text-[4.5rem]" dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}></h1>
-                            </div>
-                                <div className='py-8 md:hidden'>
-                                    <NowPlaying/>
-                                </div>
-                                <CustomCursor/>
-                                <div className='grid grid-cols-[2fr,1fr]'>
-                                    <div>
-                                        <p dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></p>
-                                    </div>
-            
-                                    <div className='md:hidden'>
-                                        <Socials/>
-                                    </div>
-                                    <DownButton/>
-                            </div>
-                </div>
+                    <div className=" md:grid-cols-2">
+                        <div className="md:col-span-1">
+                        <div className="flex justify-center">
+                            <img
+                            className="w-48 rounded-full mt-20 border-solid border-4 border-white"
+                            src={restData.acf.portrait}
+                            alt="Portrait"
+                            />
+                        </div>
+                        </div>
+                        <div className="md:col-span-1">
+                        <div>
+                            {/* Greetings */}
+                            <h1
+                            className="title text-center text-[2rem] pt-8 font-bold md:text-[#36A949] transition-all transform hover:translate-x-4 hover:text-[#F05A28] md:text-[4.5rem]"
+                            dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}
+                            ></h1>
+                        </div>
+                        <div className="py-8 md:hidden">
+                            <NowPlaying />
+                        </div>
+                        <div>
+                            <h2 className="flex justify-end pb-2"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></h2>
+                            <h2 className="flex justify-end pb-2"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_3 }}></h2>
+                            <h2 className="flex justify-end pb-2"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_4 }}></h2>
+                        </div>
+                        <div className="">
+                            <Socials />
+                        </div>
+                        <DownButton />
+                        </div>
+                    </div>
+                    </div>
+
                 </article>
               </Element>
             </section>
@@ -82,7 +90,7 @@ const Home = () => {
               </Element>
             </section>
             <NavBar/>
-          
+            <CustomCursor />
           </div>
         : 
             <Loading /> 

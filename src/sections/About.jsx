@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
 import SoundCloudPlayer from '../components/SoundcloudPlayer'
+import RandomImage from '../components/RandomImage'
+import YoutubeEmbed from '../components/YoutubeEmbed'
 
 const About = () => {
     const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/32?_embed&acf_format=standard'
@@ -29,25 +31,33 @@ const About = () => {
         { isLoaded ?
             <article className="pb-16 md:pb-0"id={`post-${restData.id}`}>
                <h1 className='flex justify-center py-8 text-[2rem]' >{restData.title.rendered}</h1>
-                <div className="entry-content px-7">
-                <section>
+               {/* I love making things */}
+               <p className='flex justify-center pb-8 text-[1.5rem]'>{restData.acf.title}</p>
+                <div className="entry-content lg:px-40 xl:px-40 xl:px-40">
+                <section className='flex justify-center flex-col'>
                     <article>
-                        {/* I love making things */}
-                        <p className='flex justify-center pb-2 '>{restData.acf.title}</p>
                         <SoundCloudPlayer/>
                         {/* Music Prod. */}
-                        <p>{restData.acf.hobby_1_title}</p>
-                        <hr className="bg-white h-1"></hr>
+                        <p className='flex justify-end pt-2 pb-2 '>{restData.acf.hobby_1_title}</p>
+                        <div class="flex justify-end">
+                            <hr className="bg-white h-.5 w-6/12"></hr>
+                        </div>
                     </article>
                     <article>
                         {/* Film and Digital Photog. */}
-                        <p>{restData.acf.hobby_2_title}</p>
-                        <hr className="bg-white h-1"></hr>
+                        <p className='flex justify-end pt-2 pb-2 '>{restData.acf.hobby_2_title}</p>
+                        <div class="flex justify-end">
+                            <hr className="bg-white h-.5 w-6/12"></hr>
+                        </div>
                     </article>
                     <article>
+                    <YoutubeEmbed/>
                         {/* Mixes and Remixes */}
-                        <p>{restData.acf.hobby_3_title}</p>
-                        <hr className="bg-white h-1"></hr>
+                        <p className='flex justify-end pt-2 pb-2 '>{restData.acf.hobby_3_title}</p>
+                        <p className='flex justify-end pb-2 '>{restData.acf.hobby_3_title}</p>
+                        <div class="flex justify-end">
+                            <hr className="bg-white h-.5 w-6/12"></hr>
+                        </div>
                     </article>
                 </section>
                 </div>
