@@ -33,28 +33,29 @@ const About = () => {
                <h1 className='flex justify-center py-8 text-[2rem]' >{restData.title.rendered}</h1>
                {/* I love making things */}
                <p className='flex justify-center pb-8 text-[1.5rem]'>{restData.acf.title}</p>
-                <div className="entry-content lg:px-40 xl:px-40 xl:px-40">
+                <div className="entry-content  xl:px-40 xl:px-40">
                 <section className='flex justify-center flex-col'>
                     <article>
                         <SoundCloudPlayer/>
                         {/* Music Prod. */}
-                        <p className='flex justify-end pt-2 pb-2 '>{restData.acf.hobby_1_title}</p>
+                        <p className='flex justify-end pt-2 pb-2 text-[1.5rem]'>{restData.acf.hobby_1_title}</p>
                         <div class="flex justify-end">
-                            <hr className="bg-white h-.5 w-6/12"></hr>
+                            <hr className="bg-white h-.5 w-6/12 mb-2"></hr>
                         </div>
                     </article>
                     <article>
+                        <RandomImage/>
                         {/* Film and Digital Photog. */}
-                        <p className='flex justify-end pt-2 pb-2 '>{restData.acf.hobby_2_title}</p>
+                        <p className='flex justify-end pt-2 pb-2 text-[1.5rem]'>{restData.acf.hobby_2_title}</p>
                         <div class="flex justify-end">
-                            <hr className="bg-white h-.5 w-6/12"></hr>
+                            <hr className="bg-white h-.5 w-6/12 mb-2"></hr>
                         </div>
                     </article>
                     <article>
-                    <YoutubeEmbed/>
+                        <YoutubeEmbed/>
                         {/* Mixes and Remixes */}
-                        <p className='flex justify-end pt-2 pb-2 '>{restData.acf.hobby_3_title}</p>
-                        <p className='flex justify-end pb-2 '>{restData.acf.hobby_3_title}</p>
+                        <p className='flex justify-end pt-2 pb-2 text-[1.5rem]'>{restData.acf.hobby_3_title}</p>
+                        <a className="flex justify-end pb-2 underline" href={restData.acf.youtube_channel_link}>{restData.acf.youtube_channel_text}</a>
                         <div class="flex justify-end">
                             <hr className="bg-white h-.5 w-6/12"></hr>
                         </div>

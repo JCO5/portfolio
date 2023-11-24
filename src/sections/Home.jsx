@@ -36,42 +36,52 @@ const Home = () => {
             <div>
             <section className='h-screen-minus-40 px-7 md:px-0'>
               {/* Home Section */}
-              <Element name="home" className="element home">
+              <Element name="home" className="element home xl:px-40">
                 <article className="relative z-5" id={`post-${restData.id}`}>
-                <div className="entry-content">
-                    <div className=" md:grid-cols-2">
-                        <div className="md:col-span-1">
-                        <div className="flex justify-center">
-                            <img
-                            className="w-48 rounded-full mt-20 border-solid border-4 border-white"
+                <div className="flex flex-col md:flex-row md:pt-48">
+                    {/* Column 1: Image */}
+                    <div className="md:w-1/2">
+                        <div className="flex justify-center md:justify-start xl:justify-start">
+                        <img
+                            className="w-48 mt-20 mb-10 rounded-full border-solid border-4 border-white p-2 shadow-inner bg-grey-600 md:w-64"
                             src={restData.acf.portrait}
-                            alt="Portrait"
-                            />
+                            alt="Portrait of Me"
+                        />
                         </div>
-                        </div>
-                        <div className="md:col-span-1">
-                        <div>
+                    </div>
+
+                    {/* Column 2: Text Content */}
+                    <div className="md:w-1/2">
+                        <div className="entry-content">
+                        <div className='flex  flex-col'>
                             {/* Greetings */}
                             <h1
-                            className="title text-center text-[2rem] pt-8 font-bold md:text-[#36A949] transition-all transform hover:translate-x-4 hover:text-[#F05A28] md:text-[4.5rem]"
+                            className="title flex pb-2 text-[2rem]"
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}
                             ></h1>
+                            {/* I'm a front end */}
+                            <h2
+                            className="pb-2"
+                            dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}
+                            ></h2>
+                            {/* based in Vancouver */}
+                            <h2
+                            className="pb-.5"
+                            dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_3 }}
+                            ></h2>
+                            <h2
+                            className="pb-6"
+                            dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_4 }}
+                            ></h2>
                         </div>
-                        <div className="py-8 md:hidden">
-                            <NowPlaying />
                         </div>
-                        <div>
-                            <h2 className="flex justify-end pb-2"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}></h2>
-                            <h2 className="flex justify-end pb-2"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_3 }}></h2>
-                            <h2 className="flex justify-end pb-2"dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_4 }}></h2>
-                        </div>
-                        <div className="">
-                            <Socials />
-                        </div>
+                    </div>
+                    </div>
+                    <div className="">
+                        <Socials />
                         <DownButton />
-                        </div>
                     </div>
-                    </div>
+              
 
                 </article>
               </Element>

@@ -6,9 +6,6 @@ export default {
     ],
   theme: {
     extend: {
-      fontFamily: {
-        'unbounded': ['Unbounded', 'sans-serif'],
-      },
       screens: {
         'sm': '640px',
         // => @media (min-width: 640px) { ... }

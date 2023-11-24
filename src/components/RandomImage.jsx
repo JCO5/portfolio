@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import gigPhoto from "../assets/gig-optimized.jpg"
+import roadtripPhoto from "../assets/roadtrip-optimized.jpg"
+import trikePhoto from "../assets/trike-optimized.jpg"
+import subwayPhoto from "../assets/subway-optimized.jpg"
 
-import subway from '../assets/subway-optimized.jpg';
-import trike from '../assets/trike-optimized.jpg'; 
-import gig from '../assets/gig-optimized.jpg'; 
-import roadtrip from '../assets/roadtrip-optimized.jpg'; 
+const images = [gigPhoto, roadtripPhoto, trikePhoto, subwayPhoto];
 
-function RandomImage() {
-  const [randImage, setRandImage] = useState(null);
-
-  useEffect(() => {
-    const images = [subway, trike, gig, roadtrip];
-    const randIndex = Math.floor(Math.random() * images.length);
-    setRandImage(images[randIndex]);
-  }, []);
-
-  const randomImageStyle = {
-    randomImageImage: `url(${randImage})`,
-    randomImageSize: 'cover',
-    randomImagePosition: 'center',
-    height: '100vh',
-    width: '100vw',
-    zIndex: -1,
+const RandomImage = () => {
+    const [currentImage, setCurrentImage] = useState(0);
+    const instagramLink = "https://www.instagram.com/magnumopuz/";
+  
+    useEffect(() => {
+      // Change image every 3 seconds
+      const interval = setInterval(() => {
+        setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+      }, 1000);
+  
+      // Cleanup the interval on component unmount
+      return () => clearInterval(interval);
+    }, []);
+  
+    return (
+      <>
+        <a href={instagramLink} target="_blank" rel="noopener noreferrer">
+        <img className="border hover:transform hover:scale-110 transition-transform duration-300" loading="lazy" src={images[currentImage]} alt={`Slideshow Image ${currentImage + 1}`} />
+        </a>
+      </>
+    );
   };
-
-  return (
-    <div className="absolute z-1 top" style={randomImageStyle}>
-    </div>
-  );
-}
-
-export default RandomImage;
+  
+  export default RandomImage;

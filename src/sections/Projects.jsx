@@ -38,11 +38,11 @@ const Projects = () => {
         { isLoaded ?
         <section>
             <h1 className='flex justify-center py-8 text-[2rem]' >{restDataPage.title.rendered}</h1>
-            <article className='grid grid-cols-1 gap-4 px-7 md:px-0 lg:px-10 '>
+            <article className='grid grid-cols-1 gap-4 px-7 md:px-0 lg:px-10 lg:px-40 xl:px-40 xl:px-40'>
             {restDataPosts.map(post => (
               <div 
                 key={post.id} 
-                className='border p-4 rounded-lg shadow-md bg-white text-black'>
+                className='border p-4 rounded-lg shadow-md bg-neutral-900 text-white'>
                 <h2 className='text-xl font-semibold mb-2 text-center'>{post.acf.title}</h2>
                 <nav className='flex flex-row justify-evenly gap-1'>
                   <a className='underline ' href={post.acf.live_site}>{post.acf.live_site_text}</a>
