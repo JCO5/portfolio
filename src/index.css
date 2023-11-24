@@ -208,6 +208,8 @@ th {
 	padding: 0;
 }
 
+/* CUSTOM STYLES */
+
 /* Typography */
 @font-face {
     font-family: 'DM Sans';
@@ -216,7 +218,11 @@ th {
     font-style: normal;
   }
   
-h1,
+h1 {
+	font-family: 'Climate Crisis', sans-serif;
+}
+
+
 h2,
 h3,
 h4 {
@@ -238,11 +244,6 @@ h4 {
 	left: 0;
 }
 
-/* Cursor Stylings */
-* {
-	cursor: none;
-}
-
 /* Site Padding */
 @media (min-width: 768px) {
 	html {
@@ -258,101 +259,39 @@ h4 {
 
 /* Site Colors */
 html {
-	background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 100%);
+	background: rgb(96,96,96);
+background: radial-gradient(circle, rgba(96,96,96,1) 0%, rgba(0,0,0,1) 100%);
 	color: #fff;
 }
 
-.nowPlayingCard {
-    flex-shrink: 0;
-    border-radius: 22px;
-    border: 2px solid #ffffff;
-    box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.3);
-    align-items: center;
-    width: 300px;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    transition: all 0.5s ease;
-}
+/* Isotope Styles */
 
-.nowPlayingCard:hover {
-    box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.3);
-    transform: translateX(-10px) translateY(-10px);
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-}
+.skills-container {
+	display: flex;
+	flex-wrap: wrap;
+  }
   
-.nowPlayingCard a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-
-.nowPlayingCard a:hover {
-    color: black;
-    text-decoration: underline;
-}
-
-.nowPlayingImage img {
-    border-radius: 8px;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 3px 3px 0 rgba(255, 255, 255, 0.3);
-    transition: all 0.5s ease;
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-    margin: 10px;
-}
-
-.nowPlayingImage img:hover {
-    box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.3);
-    transform: translateX(-3px) translateY(-3px);
-    transition: all 0.5s ease;
-}
-
-#nowPlayingDetails {
-    justify-content: center;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    width: 54%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: 54%;
-    height: 100%;
-}
-
-.nowPlayingTitle, .playlistName {
-    flex-shrink: 0;
-    color: #ffffff;
-    white-space: nowrap;
-    text-align: left;
-    font-size: 20px;
-    width: 100%;
-}
-
-.nowPlayingArtist, .playlistHeader {
-    text-align: left;
-    flex-shrink: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-	color: white;
-}
-
-.nowPlayingTime {
-    text-align: left;
-	color: white;
-}
-
-.nowPlayingState {
-    text-align: center;
-    width: 20%;
-    padding: 10px;
-}
-
-.nowPlayingState img{
-    filter: invert(100%);
-    width: 100%;
-}
+  .skill-item {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+  }
+  
+  .Development {
+	background: rgb(63,94,251);
+	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+	color: #fff; 
+	border: solid;
+	border-radius: 15%;
+	font-family: 'Climate Crisis', 'serif';
+  }
+  
+  .Design {
+	background: rgb(131,58,180);
+	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	color: #fff; /* White text color for Design */
+	border: solid;
+	border-radius: 15%;
+	font-family: 'Climate Crisis', 'serif';
+  }
+  

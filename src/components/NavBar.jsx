@@ -4,6 +4,7 @@ import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } f
 import { GoHome } from "react-icons/go";
 import { GoPerson } from "react-icons/go";
 import { RiBox3Line } from "react-icons/ri";
+import { GoStack } from "react-icons/go";
 
 function NavBar() {
      // For Section Clicking on Nav
@@ -50,6 +51,15 @@ function NavBar() {
             duration={500}
           >
           <GoPerson size={40} />
+          </Link>
+          <Link
+            to="stack"
+            className={activeSection === 'about' ? 'active text-white md:text-black' : ''}
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+          <GoStack size={40} />
           </Link>
           </ul>
         </nav>

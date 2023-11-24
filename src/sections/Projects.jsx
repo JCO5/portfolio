@@ -27,12 +27,7 @@ const Projects = () => {
         fetchData()
     }, [restPathPage, restPathPosts])
 
-    // For opening and closing content
-    const [openProject, setOpenProject] = useState(null);
-    const handleProjectClick = (postId) => {
-        setOpenProject(openProject === postId ? null : postId);
-      };
-
+    
     return (
         <>
         { isLoaded ?
@@ -48,7 +43,6 @@ const Projects = () => {
                   <a className='underline ' href={post.acf.live_site}>{post.acf.live_site_text}</a>
                   <a className='underline ' href={post.acf.github}>{post.acf.github_text}</a>
                 </nav>
-                <img src={post.acf.project_thumbnail.url} alt={post.acf.title} className='w-full h-auto'/>
                 <Tabs>
                   <TabList >
                     <Tab>{post.acf.design_text}</Tab>
@@ -57,16 +51,17 @@ const Projects = () => {
                   </TabList>
                   {/* Design */}
                   <TabPanel>
-                    <p>{post.acf.design_description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: post.acf.design_description }}></p>
                   </TabPanel>
-                   {/* Development */}
+                  {/* Development */}
                   <TabPanel>
-                    <p>{post.acf.development_description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: post.acf.development_description }}></p>
                   </TabPanel>
-                   {/* Insights */}
+                  {/* Insights */}
                   <TabPanel>
-                    <p>{post.acf.insights_description}</p>
+                    <p dangerouslySetInnerHTML={{ __html: post.acf.insights_description }}></p>
                   </TabPanel>
+
                 </Tabs>
               </div>
             ))}

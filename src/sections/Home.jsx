@@ -6,7 +6,6 @@ import Projects from './Projects'
 import About from './About'
 import NavBar from '../components/NavBar'; 
 import CustomCursor from '../components/CustomCursor';
-import NowPlaying from '../components/NowPlaying';
 import Socials from '../components/Socials';
 
 
@@ -51,38 +50,33 @@ const Home = () => {
                     </div>
 
                     {/* Column 2: Text Content */}
-                    <div className="md:w-1/2">
-                        <div className="entry-content">
+                    <div className="flex justify-end items-center md:w-1/2">
+                        
                         <div className='flex  flex-col'>
                             {/* Greetings */}
                             <h1
-                            className="title flex pb-2 text-[2rem]"
+                            className="title flex text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem]"
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}
                             ></h1>
                             {/* I'm a front end */}
                             <h2
-                            className="pb-2"
+                            className="pb-2  text-end"
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}
                             ></h2>
                             {/* based in Vancouver */}
                             <h2
-                            className="pb-.5"
+                            className="pb-.5  text-end"
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_3 }}
                             ></h2>
                             <h2
-                            className="pb-6"
+                            className="pb-6  text-end"
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_4 }}
                             ></h2>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="">
-                        <Socials />
-                        <DownButton />
-                    </div>
-              
 
+                        </div>
+                    </div>
+                    </div>
+                    <Socials />
                 </article>
               </Element>
             </section>
@@ -99,8 +93,10 @@ const Home = () => {
                 <About />
               </Element>
             </section>
+            
+            {/* DOM elements */}
             <NavBar/>
-            <CustomCursor />
+            <DownButton />
           </div>
         : 
             <Loading /> 

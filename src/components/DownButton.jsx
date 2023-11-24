@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-
+import { FaChevronDown } from "react-icons/fa6";
 
 const DownButton = ({activeSection}) => {
   
@@ -14,7 +14,7 @@ const DownButton = ({activeSection}) => {
             smooth={true}
             duration={500}
           >
-          down
+          <FaChevronDown />
           </Link>
         </>
     )

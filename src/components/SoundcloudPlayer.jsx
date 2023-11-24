@@ -27,3 +27,7 @@ const SoundCloudPlayer = () => {
 };
 
 export default SoundCloudPlayer;
+
+// issue with soundcloud player - cannot begin autoplay since browser policy dictates that autoplay can only start after a user gesture on page.
+
+// found workaround using a button but I am not satisfied with the User Experience in this case - have to iterate and fix.
