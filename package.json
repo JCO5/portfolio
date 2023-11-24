@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-spring/parallax": "^9.7.3",
+    "aos": "^2.3.4",
     "framer-motion": "^10.16.5",
     "isotope-layout": "^3.0.6",
     "random-js": "^2.1.0",

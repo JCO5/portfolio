@@ -1,12 +1,8 @@
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import { Link } from 'react-router-dom'
+// Configured Home section like App.jsx
 import Home from './sections/Home'
 
-
-
 function App() {
-  
-  const restBase = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/'
   
   const featuredImage = ( featuredImageObject ) => {
     let imgWidth = featuredImageObject.media_details.sizes.full.width;

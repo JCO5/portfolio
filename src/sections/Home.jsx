@@ -5,9 +5,12 @@ import DownButton from '../components/DownButton'
 import Projects from './Projects'
 import About from './About'
 import NavBar from '../components/NavBar'; 
-import CustomCursor from '../components/CustomCursor';
 import Socials from '../components/Socials';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
+// Initialize AOS with configurations
+AOS.init();
 
 const Home = () => {
     const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/15?_embed&acf_format=standard'
@@ -42,7 +45,7 @@ const Home = () => {
                     <div className="md:w-1/2">
                         <div className="flex justify-center md:justify-start xl:justify-start">
                         <img
-                            className="w-48 mt-20 mb-10 rounded-full border-solid border-4 border-white p-2 shadow-inner bg-grey-600 md:w-64"
+                            className="w-48 mt-20 mb-10 rounded-full border-solid border-4  p-2 shadow-inner bg-grey-600 glow-image md:w-64"
                             src={restData.acf.portrait}
                             alt="Portrait of Me"
                         />
@@ -55,7 +58,7 @@ const Home = () => {
                         <div className='flex  flex-col'>
                             {/* Greetings */}
                             <h1
-                            className="title flex text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem]"
+                            className="title flex justify-end sm:text-center md:text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem] "
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}
                             ></h1>
                             {/* I'm a front end */}
@@ -82,14 +85,13 @@ const Home = () => {
             </section>
             <section>
               {/* Projects Section */}
-              <Element name="projects" className="element projects toggleActive">
+              <Element data-aos="fade-up" name="projects" className="element projects toggleActive">
                 <Projects />
               </Element>
             </section>
-  
             <section>
               {/* About Section */}
-              <Element name="about" className="element">
+              <Element data-aos="fade-up" name="about" className="element">
                 <About />
               </Element>
             </section>

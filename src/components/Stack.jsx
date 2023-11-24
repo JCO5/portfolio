@@ -24,9 +24,9 @@ const Stack = () => {
     return (
         <>
         { isLoaded ?
-            <Element name="stack" className="element pb-16 md:pb-0"id={`post-${restData.id}`}>
+            <Element name="stack" className="element pb-16 "id={`post-${restData.id}`}>
                <h1 className='flex justify-center py-8 text-[2rem]'>{restData.acf.stack_title}</h1>
-                <div className="entry-content  xl:px-40 xl:px-40">
+                <div className="entry-content xl:px-40 xl:px-40 ">
                    <IsotopeFilter/>
                 </div>
                 

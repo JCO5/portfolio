@@ -4,11 +4,12 @@ import SoundCloudPlayer from '../components/SoundcloudPlayer'
 import RandomImage from '../components/RandomImage'
 import YoutubeEmbed from '../components/YoutubeEmbed'
 import Stack from '../components/Stack'
-
+import CopyToClipboard from '../components/CopyToClipboard'
 const About = () => {
     const restPath = 'https://joaquindev.ca/zlzkxclx/wp-json/wp/v2/pages/32?_embed&acf_format=standard'
     const [restData, setData] = useState(null)
     const [isLoaded, setLoadStatus] = useState(false)
+    const emailAddress = "joaquinopulencia99@gmail.com"
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,9 +25,6 @@ const About = () => {
         fetchData()
     }, [restPath])
 
-    console.log('restData:', restData);
-
-    
     return (
         <>
         { isLoaded ?
@@ -35,11 +33,12 @@ const About = () => {
                {/* I love making things */}
                <p className='flex justify-center pb-8 text-[1.5rem]'>{restData.acf.title}</p>
                 <div className="entry-content  xl:px-40 xl:px-40">
-                    <section className='flex justify-center flex-col'>
+                    <section className='flex justify-end flex-col'>
                         <article>
                             <SoundCloudPlayer/>
                             {/* Music Prod. */}
                             <p className='flex justify-end pt-2 pb-2 text-[1.5rem]'>{restData.acf.hobby_1_title}</p>
+                            <p className='flex justify-end pb-2' >{restData.acf.hobby_1_description}</p>
                             <div className="flex justify-end">
                                 <hr className="bg-white h-.5 w-6/12 mb-2"></hr>
                             </div>
@@ -48,6 +47,7 @@ const About = () => {
                             <RandomImage/>
                             {/* Film and Digital Photog. */}
                             <p className='flex justify-end pt-2 pb-2 text-[1.5rem]'>{restData.acf.hobby_2_title}</p>
+                            <p className='flex justify-end pb-2' >{restData.acf.hobby_2_description}</p>
                             <div className="flex justify-end">
                                 <hr className="bg-white h-.5 w-6/12 mb-2"></hr>
                             </div>
@@ -57,6 +57,7 @@ const About = () => {
                             {/* Mixes and Remixes */}
                             <p className='flex justify-end pt-2 pb-2 text-[1.5rem]'>{restData.acf.hobby_3_title}</p>
                             <a className="flex justify-end pb-2 underline" href={restData.acf.youtube_channel_link}>{restData.acf.youtube_channel_text}</a>
+                            <p className='flex justify-end pb-2' >{restData.acf.hobby_3_description}</p>
                             <div className="flex justify-end">
                                 <hr className="bg-white h-.5 w-6/12"></hr>
                             </div>
@@ -65,7 +66,8 @@ const About = () => {
                 </div>
                 <Stack/>
                 <section>
-
+                    <h1 className='flex justify-center py-8 text-[2rem]'>{restData.acf.contact_me_title}</h1>
+                    <CopyToClipboard email={emailAddress}/>
                 </section>
             </article>
         : 

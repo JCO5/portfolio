@@ -56,12 +56,12 @@ const IsotopeFilter = () => {
 
   return (
     <div>
-      <div className='flex justify-evenly pb-2 text'>
-        <button className="underline text-[1.25rem]" onClick={() => filterSkills('Development')}>Development</button>
-        <button  className="underline text-[1.25rem]" onClick={() => filterSkills('Design')}>Design</button>
+      <div className='flex justify-evenly mb-4 text'>
+        <button className="underline text-[1.25rem] dev-stack-button" onClick={() => filterSkills('Development')}>Development</button>
+        <button  className="underline text-[1.25rem] design-stack-button" onClick={() => filterSkills('Design')}>Design</button>
       </div>
 
-      <div className="skills-container">
+      <div className="skills-container px-16">
         {restData.acf && restData.acf.stack ? (
           restData.acf.stack.map((skill, index) => (
             <div key={index} className={`skill-item ${skill.category}`}>

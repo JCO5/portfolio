@@ -27,6 +27,9 @@ const Projects = () => {
         fetchData()
     }, [restPathPage, restPathPosts])
 
+
+    console.log('restDataPage:', restDataPage);
+    console.log('restDataPosts:', restDataPosts[0]);
     
     return (
         <>
@@ -40,9 +43,12 @@ const Projects = () => {
                 className='border p-4 rounded-lg shadow-md bg-neutral-900 text-white'>
                 <h2 className='text-xl font-semibold mb-2 text-center'>{post.acf.title}</h2>
                 <nav className='flex flex-row justify-evenly gap-1'>
-                  <a className='underline ' href={post.acf.live_site}>{post.acf.live_site_text}</a>
-                  <a className='underline ' href={post.acf.github}>{post.acf.github_text}</a>
+                  <a className='underline' href={post.acf.live_site}>{post.acf.live_site_text}</a>
+                  <a className='underline' href={post.acf.github}>{post.acf.github_text}</a>
                 </nav>
+                <div className='flex justify-center'>
+                  <video className='p-2 glow-border'   src={post.acf.video} muted autoPlay controls loading="lazy"></video>
+                </div>
                 <Tabs>
                   <TabList >
                     <Tab>{post.acf.design_text}</Tab>
@@ -61,7 +67,6 @@ const Projects = () => {
                   <TabPanel>
                     <p dangerouslySetInnerHTML={{ __html: post.acf.insights_description }}></p>
                   </TabPanel>
-
                 </Tabs>
               </div>
             ))}
