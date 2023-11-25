@@ -43,9 +43,9 @@ const Home = () => {
                 <div className="flex flex-col md:flex-row md:pt-48">
                     {/* Column 1: Image */}
                     <div className="md:w-1/2">
-                        <div className="flex justify-center md:justify-start xl:justify-start">
+                        <div className=" flex justify-center md:justify-start xl:justify-start">
                         <img
-                            className="w-48 mt-20 mb-10 rounded-full border-solid border-4  p-2 shadow-inner bg-grey-600 glow-image md:w-64"
+                            className="portrait w-48 mt-20 mb-10 rounded-full border-solid border-4  p-2 shadow-inner bg-grey-600 glow-image md:w-64"
                             src={restData.acf.portrait}
                             alt="Portrait of Me"
                         />
@@ -57,13 +57,13 @@ const Home = () => {
                         
                         <div className='flex  flex-col'>
                             {/* Greetings */}
-                            <h1
-                            className="title flex justify-end sm:text-center md:text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem] "
+                            <span
+                            className="title flex text-end justify-end sm:text-center md:text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem] "
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}
-                            ></h1>
+                            ></span>
                             {/* I'm a front end */}
                             <h2
-                            className="pb-2  text-end"
+                            className="me-paragraph pb-2  text-end"
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message_2 }}
                             ></h2>
                             {/* based in Vancouver */}

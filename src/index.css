@@ -270,8 +270,7 @@ background: radial-gradient(circle, rgba(54,169,73,1) 0%, rgba(240,90,40,1) 100%
 	background: rgb(63,94,251);
 	background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 	color: #ffffff; 
-	border: solid;
-	border-radius: 20%;
+
 	font-family: 'DM Sans', 'serif';
   }
   
@@ -279,8 +278,6 @@ background: radial-gradient(circle, rgba(54,169,73,1) 0%, rgba(240,90,40,1) 100%
 	background: rgb(131,58,180);
 	background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 	color: #fff; /* White text color for Design */
-	border: solid;
-	border-radius: 15%;
 	font-family: 'DM Sans', 'serif';
   }
 
@@ -323,3 +320,22 @@ background: radial-gradient(circle, rgba(54,169,73,1) 0%, rgba(240,90,40,1) 100%
 	animation: glow 2s infinite; /* Applies the glow animation */
 	
   }
+
+/* Styles for heights below 800px */
+@media (max-height: 760px) {
+	.down-button {
+		display: none;
+	}
+}
+
+/* List-Style */
+.react-tabs__tab-panel div ul {
+	list-style-type: disc;
+	padding-left: 2rem;
+}
+
+/* React Tabs Styles */
+.react-tabs__tab--selected {
+	background: #000;
+	color: white;
+}

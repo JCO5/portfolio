@@ -23,7 +23,7 @@ const RandomImage = () => {
     return (
       <>
         <a href={instagramLink} target="_blank" rel="noopener noreferrer">
-        <img className="border hover:transform hover:scale-110 transition-transform duration-300" loading="lazy" src={images[currentImage]} alt={`Slideshow Image ${currentImage + 1}`} />
+        <img className="border" loading="lazy" src={images[currentImage]} alt={`Slideshow Image ${currentImage + 1}`} />
         </a>
       </>
     );

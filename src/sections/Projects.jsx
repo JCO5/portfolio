@@ -40,7 +40,9 @@ const Projects = () => {
             {restDataPosts.map(post => (
               <div 
                 key={post.id} 
-                className='border p-4 rounded-lg shadow-md bg-neutral-900 text-white'>
+                className='border-4 border-[#36A949] p-4 rounded-lg shadow-md bg-[#FFFDD0] text-black
+                
+                hover:transform hover:scale-105 transition-transform duration-300'>
                 <h2 className='text-xl font-semibold mb-2 text-center'>{post.acf.title}</h2>
                 <nav className='flex flex-row justify-evenly gap-1'>
                   <a className='underline' href={post.acf.live_site}>{post.acf.live_site_text}</a>
@@ -57,15 +59,15 @@ const Projects = () => {
                   </TabList>
                   {/* Design */}
                   <TabPanel>
-                    <p dangerouslySetInnerHTML={{ __html: post.acf.design_description }}></p>
+                    <div dangerouslySetInnerHTML={{ __html: post.acf.design_description }}></div>
                   </TabPanel>
                   {/* Development */}
                   <TabPanel>
-                    <p dangerouslySetInnerHTML={{ __html: post.acf.development_description }}></p>
+                    <div dangerouslySetInnerHTML={{ __html: post.acf.development_description }}></div>
                   </TabPanel>
                   {/* Insights */}
                   <TabPanel>
-                    <p dangerouslySetInnerHTML={{ __html: post.acf.insights_description }}></p>
+                    <div dangerouslySetInnerHTML={{ __html: post.acf.insights_description }}></div>
                   </TabPanel>
                 </Tabs>
               </div>
