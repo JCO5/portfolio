@@ -306,12 +306,25 @@ background: radial-gradient(circle, rgba(54,169,73,1) 0%, rgba(240,90,40,1) 100%
 	}
   }
 
+@keyframes glow-orange {
+0% {
+	box-shadow: 0 0 7px #F05A28; /* Green glow */
+}
+50% {
+	box-shadow: 0 0 22px #F05A28; /* Increase the glow */
+}
+100% {
+	box-shadow: 0 0 7px #F05A28; /* Return to a smaller glow */
+}
+}
+
+
   .glow-border {
 	border: 2px solid #ffffff; /* Green border color */
 	border-radius: 5px; /* Optional: Adds rounded corners */
 	padding: 10px; /* Optional: Adds some padding inside the border */
 	display: inline-block; /* Optional: Makes it an inline block */
-	animation: glow 2s infinite; /* Applies the glow animation */
+	animation: glow-orange 2s infinite; /* Applies the glow animation */
 	margin: 2rem;
   }
 

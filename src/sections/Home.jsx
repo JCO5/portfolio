@@ -57,10 +57,10 @@ const Home = () => {
                         
                         <div className='flex  flex-col'>
                             {/* Greetings */}
-                            <span
-                            className="title flex text-end justify-end sm:text-center md:text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem] "
+                            <h1
+                            className="title flex text-end justify-end sm:text-end md:text-end pb-2 sm:text-[2rem] md:text-[2rem] lg:text-[3rem] "
                             dangerouslySetInnerHTML={{ __html: restData.acf.intro_message }}
-                            ></span>
+                            ></h1>
                             {/* I'm a front end */}
                             <h2
                             className="me-paragraph pb-2  text-end"
